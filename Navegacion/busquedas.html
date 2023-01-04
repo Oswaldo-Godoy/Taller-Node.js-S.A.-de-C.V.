@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Busquedas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/busquedas.js"></script>
+</head>
+
+    <body>
+  <h1>Resultado de Búsqueda</h1>
+  <form action= "../routes/empleados/" onsubmit="setDireccion();">
+    <input type="search" placeholder="Búsqueda" id="search">
+  </form>
+
+    <script>
+  function setDireccion() {
+    // Obtener el valor del campo de búsqueda
+    const search = document.getElementById("search");
+    const value = search.value;
+
+    // Concatenar el valor de búsqueda a la URL base
+    const direccion = "../routes/empleados/" + value;
+
+    // Establecer la dirección como la acción del formulario
+    const form = document.querySelector("form");
+    form.setAttribute("action", direccion);
+  }
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
